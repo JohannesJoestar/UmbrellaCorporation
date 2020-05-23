@@ -1,8 +1,7 @@
 package com.example.umbrellacorporation.service;
 
-import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.umbrellacorporation.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -22,7 +21,7 @@ public class CloudMessagingService extends FirebaseMessagingService {
         logPayload(message.getData());
 
         // "Foreground" notification
-        toast(message.getNotification());
+        broadcastNotification(message.getNotification());
     }
     // Utility
     private void logPayload(Map<String, String> payload){
@@ -38,17 +37,13 @@ public class CloudMessagingService extends FirebaseMessagingService {
             );
         }
     }
-    private void toast(Notification notification){
-        Context context = getApplicationContext();
-        Toast.makeText(
-                context,
-                notification.getTitle(),
-                Toast.LENGTH_LONG
-        ).show();
-        Toast.makeText(
-                context,
-                notification.getBody(),
-                Toast.LENGTH_LONG
-        ).show();
+    private void broadcastNotification(Notification notification){
+
+        // Broadcasting a message from a Service to be received by Activity instances.
+        Intent intent = new Intent("new_notification");
+        intent.putExtra("title", notification.getTitle());
+        intent.putExtra("body", notification.getBody());
+        sendBroadcast(intent);
+
     }
 }
