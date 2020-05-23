@@ -2,7 +2,7 @@ package com.example.umbrellacorporation.model;
 
 import java.io.Serializable;
 
-public class FirebaseCloudMessage implements Serializable {
+public class SupportTicket implements Serializable {
 
     //// Properties
     // Attributes
@@ -10,7 +10,7 @@ public class FirebaseCloudMessage implements Serializable {
 
     //// Constructors
     // Parametric
-    public FirebaseCloudMessage(String email, String text, String token){
+    public SupportTicket(String email, String text, String token){
         setEmail(email);
         setText(text);
         setToken(token);
