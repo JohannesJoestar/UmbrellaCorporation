@@ -1,6 +1,8 @@
 package com.example.umbrellacorporation.service;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.umbrellacorporation.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -9,6 +11,8 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.util.Iterator;
 import java.util.Map;
 
+import static com.google.firebase.messaging.RemoteMessage.*;
+
 public class CloudMessagingService extends FirebaseMessagingService {
 
     //// Methods
@@ -16,6 +20,9 @@ public class CloudMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage message){
         logPayload(message.getData());
+
+        // "Foreground" notification
+        toast(message.getNotification());
     }
     // Utility
     private void logPayload(Map<String, String> payload){
@@ -30,5 +37,18 @@ public class CloudMessagingService extends FirebaseMessagingService {
                     getResources().getString(R.string.payload_log_format), key, value)
             );
         }
+    }
+    private void toast(Notification notification){
+        Context context = getApplicationContext();
+        Toast.makeText(
+                context,
+                notification.getTitle(),
+                Toast.LENGTH_LONG
+        ).show();
+        Toast.makeText(
+                context,
+                notification.getBody(),
+                Toast.LENGTH_LONG
+        ).show();
     }
 }
