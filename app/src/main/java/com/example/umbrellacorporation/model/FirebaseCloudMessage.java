@@ -1,6 +1,8 @@
 package com.example.umbrellacorporation.model;
 
-public class FirebaseCloudMessage {
+import java.io.Serializable;
+
+public class FirebaseCloudMessage implements Serializable {
 
     //// Properties
     // Attributes
