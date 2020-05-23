@@ -10,4 +10,6 @@
     <string name="contact_address">CONTACT ADDRESS</string>
     <string name="support_form">SUPPORT FORM</string>
     <string name="umbrella_corp_logo_desc">Logo of Umbrella Corporation</string>
+    <!-- CloudMessagingService: Logging -->
+    <string name="payload_log_format">%1$s --> %2$s</string>
 </resources>
