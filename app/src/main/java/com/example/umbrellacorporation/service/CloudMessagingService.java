@@ -14,6 +14,12 @@ import static com.google.firebase.messaging.RemoteMessage.*;
 
 public class CloudMessagingService extends FirebaseMessagingService {
 
+    //// Properties
+    // Constants
+    public static String BR_FILTER_ACTION = "new_notification";
+    public static String I_EXTRA_NOTIFICATION_TITLE = "title";
+    public static String I_EXTRA_NOTIFICATION_BODY = "body";
+
     //// Methods
     // FirebaseMessagingService Implementation
     @Override
@@ -40,9 +46,9 @@ public class CloudMessagingService extends FirebaseMessagingService {
     private void broadcastNotification(Notification notification){
 
         // Broadcasting a message from a Service to be received by Activity instances.
-        Intent intent = new Intent("new_notification");
-        intent.putExtra("title", notification.getTitle());
-        intent.putExtra("body", notification.getBody());
+        Intent intent = new Intent(BR_FILTER_ACTION);
+        intent.putExtra(I_EXTRA_NOTIFICATION_TITLE, notification.getTitle());
+        intent.putExtra(I_EXTRA_NOTIFICATION_BODY, notification.getBody());
         sendBroadcast(intent);
 
     }
