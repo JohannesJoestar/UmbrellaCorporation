@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">UmbrellaCorporation</string>
+
+    <!-- MainActivity -->
+    <string name="company_history">COMPANY HISTORY</string>
+    <string name="company_vision">COMPANY VISION</string>
+    <string name="contact_address">CONTACT ADDRESS</string>
+    <string name="support_form">SUPPORT FORM</string>
+    <string name="umbrella_corp_logo_desc">Logo of Umbrella Corporation</string>
 </resources>
