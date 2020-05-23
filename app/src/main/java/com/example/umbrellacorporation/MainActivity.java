@@ -3,6 +3,7 @@ package com.example.umbrellacorporation;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     // Components
     Button btnHistory, btnVision, btnAddress, btnSupport;
     // References
+    Resources resources = getResources();
     String token;
 
     //// Methods
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Subscribe to push notifications
         FirebaseMessaging.getInstance().subscribeToTopic(
-                getResources().getString(R.string.notifications_channel)
+                resources.getString(R.string.notifications_channel)
         ).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -52,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(
                             getApplicationContext(),
                             (task.isSuccessful() ?
-                                    "Successfully subscribed to notifications." :
-                                    "Unable to subscribe to notifications."),
+                                    resources.getString(R.string.subscription_ok) :
+                                    resources.getString(R.string.subscription_fail)),
                             Toast.LENGTH_LONG
                     ).show();
                 }

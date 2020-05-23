@@ -4,12 +4,16 @@
     <!-- Global -->
     <string name="notifications_channel">notifications</string>
 
-    <!-- MainActivity -->
+    <!-- MainActivity: GUI -->
     <string name="company_history">COMPANY HISTORY</string>
     <string name="company_vision">COMPANY VISION</string>
     <string name="contact_address">CONTACT ADDRESS</string>
     <string name="support_form">SUPPORT FORM</string>
     <string name="umbrella_corp_logo_desc">Logo of Umbrella Corporation</string>
+    <!-- MainActivity: Subscriptions -->
+    <string name="subscription_ok">Successfully subscribed to notifications.</string>
+    <string name="subscription_fail">Unable to subscribe to notifications.</string>
+
     <!-- CloudMessagingService: Logging -->
     <string name="payload_log_format">%1$s --> %2$s</string>
 </resources>
