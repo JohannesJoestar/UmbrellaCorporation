@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">UmbrellaCorporation</string>
 
+    <!-- Global -->
+    <string name="notifications_channel">notifications</string>
+
     <!-- MainActivity -->
     <string name="company_history">COMPANY HISTORY</string>
     <string name="company_vision">COMPANY VISION</string>
