@@ -29,9 +29,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".gui.ContactActivity"
-            android:label="@string/title_activity_contact"></activity>
         <activity android:name=".gui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".gui.ContactActivity"
+            android:label="@string/title_activity_contact" />
+        <activity android:name=".gui.InformationActivity"/>
+        <activity android:name=".gui.SupportActivity"/>
+
 
         <service android:name=".service.CloudMessagingService">
             <intent-filter>
