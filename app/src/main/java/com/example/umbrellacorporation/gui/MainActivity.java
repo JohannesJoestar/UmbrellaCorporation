@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     //// Properties
     // Components
-    Button btnHistory, btnVision, btnAddress, btnSupport;
+    private Button btnHistory, btnVision, btnAddress, btnSupport;
     // References
-    Resources resources = getResources();
-    IntentFilter IF;
-    BroadcastReceiver BR;
-    String token;
+    private Resources resources = getResources();
+    private IntentFilter IF;
+    private BroadcastReceiver BR;
+    private String token;
 
     //// Methods
     // Activity life cycle
