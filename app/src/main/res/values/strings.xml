@@ -3,6 +3,7 @@
 
     <!-- Global -->
     <string name="notifications_channel">notifications</string>
+    <string name="weird_intent">How?</string>
 
     <!-- MainActivity: GUI -->
     <string name="company_history">COMPANY HISTORY</string>
