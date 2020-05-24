@@ -25,5 +25,6 @@
     <string name="support_send">SEND</string>
     <string name="support_thanks">Thank you!</string>
     <string name="support_soon">We will contact you soon.</string>
+    <string name="title_activity_contact">Map</string>
 
 </resources>
