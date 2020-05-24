@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     //// Properties
     // References
-    private Resources resources = getResources();
+    private Resources resources;
     private IntentFilter IF;
     private BroadcastReceiver BR;
     private String token;
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         });
+        resources = getResources();
 
         // Setup BroadcastReceiver for toasting Firebase notifications
         BR = new BroadcastReceiver() {
