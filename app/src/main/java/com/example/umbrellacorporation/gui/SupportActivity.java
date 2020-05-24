@@ -1,6 +1,5 @@
 package com.example.umbrellacorporation.gui;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.umbrellacorporation.R;
 import com.example.umbrellacorporation.model.SupportTicket;
-import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +25,7 @@ public class SupportActivity extends AppCompatActivity {
     // Components
     private EditText etEmail;
     private EditText etMessage;
+    private EditText etPhone;
     // References
     private DatabaseReference DBR;
     private FirebaseDatabase DB;
@@ -69,6 +68,7 @@ public class SupportActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = etEmail.getText().toString();
                 String message = etMessage.getText().toString();
+                String phone = etPhone.getText().toString();
 
                 // Validate fields
                 if (email.isEmpty() || message.isEmpty()){
@@ -82,7 +82,7 @@ public class SupportActivity extends AppCompatActivity {
                 } else {
 
                     // Build message for Firebase
-                    SupportTicket ticket = new SupportTicket(email, message, token);
+                    SupportTicket ticket = new SupportTicket(email, phone, message, token);
 
                     // Write to Firebase
                     DBR.push().setValue(ticket).addOnCompleteListener(new OnCompleteListener<Void>() {

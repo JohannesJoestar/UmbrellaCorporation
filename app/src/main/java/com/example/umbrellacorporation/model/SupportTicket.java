@@ -6,12 +6,13 @@ public class SupportTicket implements Serializable {
 
     //// Properties
     // Attributes
-    private String email, text, token;
+    private String email, phone, text, token;
 
     //// Constructors
     // Parametric
-    public SupportTicket(String email, String text, String token){
+    public SupportTicket(String email, String phone, String text, String token){
         setEmail(email);
+        setPhone(phone);
         setText(text);
         setToken(token);
     }
@@ -35,5 +36,11 @@ public class SupportTicket implements Serializable {
     }
     public void setToken(String token){
         this.token = token;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

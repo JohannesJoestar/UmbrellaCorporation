@@ -10,20 +10,30 @@
 
     <EditText
         android:id="@+id/etEmail"
-        android:hint="E-Mail Address"
+        android:hint="@string/e_mail_address"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_marginTop="10dp"
         android:id="@+id/etMessage"
         android:inputType="textMultiLine"
-        android:hint="Message Text Here"
+        android:hint="@string/message_text_here"
         android:layout_weight="1"
         android:gravity="top|left"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnSend"
