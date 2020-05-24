@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // Alerts more suitable than Toasts for notifications
                 AlertDialog.Builder ADB = new AlertDialog.Builder(context);
-                ADB.setTitle(extras.getString(CloudMessagingService.I_EXTRA_NOTIFICATION_TITLE));
-                ADB.setTitle(extras.getString(CloudMessagingService.I_EXTRA_NOTIFICATION_BODY));
-                ADB.setNegativeButton(R.string.adb_ok, null);
+                ADB.setTitle(extras.getString(CloudMessagingService.I_EXTRA_NOTIFICATION_TITLE))
+                    .setMessage(extras.getString(CloudMessagingService.I_EXTRA_NOTIFICATION_BODY))
+                    .setNegativeButton(R.string.adb_ok, null)
+                    .show();
             }
         };
         IF = new IntentFilter(CloudMessagingService.BR_FILTER_ACTION);
