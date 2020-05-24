@@ -60,6 +60,7 @@ public class SupportActivity extends AppCompatActivity {
         // Get components
         etEmail = findViewById(R.id.etEmail);
         etMessage = findViewById(R.id.etMessage);
+        etPhone = findViewById(R.id.etPhone);
 
         //// Attach events
         // "Send" button
