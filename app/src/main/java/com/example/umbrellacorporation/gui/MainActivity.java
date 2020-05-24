@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -26,13 +27,13 @@ import com.google.firebase.messaging.FirebaseMessaging;
 public class MainActivity extends AppCompatActivity {
 
     //// Properties
-    // Components
-    private Button btnHistory, btnVision, btnAddress, btnSupport;
     // References
     private Resources resources = getResources();
     private IntentFilter IF;
     private BroadcastReceiver BR;
     private String token;
+    // Constants
+    public static String I_EXTRA_F_TOKEN = "token";
 
     //// Methods
     // Activity life cycle
@@ -40,6 +41,48 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //// Attach events
+        // "History" button
+        findViewById(R.id.btnHistory).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, InformationActivity.class)
+                                .putExtra(InformationActivity.I_EXTRA_INFO_TYPE, "history")
+                );
+            }
+        });
+        // "Vision" button
+        findViewById(R.id.btnVision).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, InformationActivity.class)
+                                .putExtra(InformationActivity.I_EXTRA_INFO_TYPE, "vision")
+                );
+            }
+        });
+        // "Contact" button
+        findViewById(R.id.btnAddress).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, ContactActivity.class)
+                                .putExtra(InformationActivity.I_EXTRA_INFO_TYPE, "contact")
+                );
+            }
+        });
+        // "Support" button
+        findViewById(R.id.btnSupport).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, SupportActivity.class)
+                                .putExtra(I_EXTRA_F_TOKEN, token)
+                );
+            }
+        });
 
         // Setup BroadcastReceiver for toasting Firebase notifications
         BR = new BroadcastReceiver() {
@@ -69,9 +112,8 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         // Subscribe to push notifications
-        FirebaseMessaging.getInstance().subscribeToTopic(
-                resources.getString(R.string.notifications_channel)
-        ).addOnCompleteListener(new OnCompleteListener<Void>() {
+        FirebaseMessaging.getInstance().subscribeToTopic("notifications")
+            .addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
 
