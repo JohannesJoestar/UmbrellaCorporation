@@ -1,4 +1,4 @@
-package com.example.umbrellacorporation;
+package com.example.umbrellacorporation.gui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.umbrellacorporation.R;
 import com.example.umbrellacorporation.service.CloudMessagingService;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
