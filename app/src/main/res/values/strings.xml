@@ -13,6 +13,8 @@
     <!-- MainActivity: Subscriptions -->
     <string name="subscription_ok">Successfully subscribed to notifications.</string>
     <string name="subscription_fail">Unable to subscribe to notifications.</string>
+    <!-- MainActivity: Notifications -->
+    <string name="adb_ok">OK</string>
 
     <!-- CloudMessagingService: Logging -->
     <string name="payload_log_format">%1$s --> %2$s</string>
