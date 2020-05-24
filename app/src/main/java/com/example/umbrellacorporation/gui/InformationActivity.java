@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.umbrellacorporation.R;
-import com.example.umbrellacorporation.model.Information;
+import com.example.umbrellacorporation.model.CorpInformation;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,8 +20,8 @@ public class InformationActivity extends AppCompatActivity {
 
     //// Properties
     // Reference
-    DatabaseReference DBR;
-    FirebaseDatabase DB;
+    private DatabaseReference DBR;
+    private FirebaseDatabase DB;
     // Constants
     public static String I_EXTRA_INFO_TYPE = "type";
 
@@ -50,7 +50,7 @@ public class InformationActivity extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     // Process snapshot
-                    Information data = dataSnapshot.getValue(Information.class);
+                    CorpInformation data = dataSnapshot.getValue(CorpInformation.class);
 
                     // Use processed information
                     ((TextView) findViewById(R.id.txtTitle)).setText(data.getTitle());

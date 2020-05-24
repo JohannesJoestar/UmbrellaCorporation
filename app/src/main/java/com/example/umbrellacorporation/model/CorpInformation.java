@@ -2,7 +2,7 @@ package com.example.umbrellacorporation.model;
 
 import java.io.Serializable;
 
-public class Information implements Serializable {
+public class CorpInformation implements Serializable {
 
     //// Properties
     // Attributes
@@ -11,7 +11,7 @@ public class Information implements Serializable {
 
     //// Constructors
     // Parametric
-    public Information(String title, String message){
+    public CorpInformation(String title, String message){
         setTitle(title);
         setMessage(message);
     }
