@@ -29,6 +29,13 @@ public class CloudMessagingService extends FirebaseMessagingService {
         // "Foreground" notification
         broadcastNotification(message.getNotification());
     }
+    @Override
+    public void onNewToken(String token) {
+        super.onNewToken(token);
+
+        // DEBUG
+        Log.e("CloudMessagingService", token);
+    }
     // Utility
     private void logPayload(Map<String, String> payload){
         Iterator<String> iterator = payload.keySet().iterator();
