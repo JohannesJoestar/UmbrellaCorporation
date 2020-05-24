@@ -10,6 +10,8 @@ public class CorpInformation implements Serializable {
     private String message;
 
     //// Constructors
+    // Default
+    public CorpInformation(){};
     // Parametric
     public CorpInformation(String title, String message){
         setTitle(title);

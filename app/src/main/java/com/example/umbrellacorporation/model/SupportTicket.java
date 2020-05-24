@@ -9,6 +9,8 @@ public class SupportTicket implements Serializable {
     private String email, phone, text, token;
 
     //// Constructors
+    // Default
+    public SupportTicket(){};
     // Parametric
     public SupportTicket(String email, String phone, String text, String token){
         setEmail(email);

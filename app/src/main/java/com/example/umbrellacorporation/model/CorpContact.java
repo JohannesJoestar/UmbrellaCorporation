@@ -11,6 +11,8 @@ public class CorpContact implements Serializable {
     private int longitude;
 
     //// Constructors
+    // Default
+    public CorpContact(){};
     // Parametric
     public CorpContact(String phone, int latitude, int longitude){
         setPhone(phone);
