@@ -4,6 +4,7 @@
     <!-- Global -->
     <string name="notifications_channel">notifications</string>
     <string name="weird_intent">How?</string>
+    <string name="no_blank_fields">Please fill in all the fields!</string>
 
     <!-- MainActivity: GUI -->
     <string name="company_history">COMPANY HISTORY</string>
@@ -19,4 +20,10 @@
 
     <!-- CloudMessagingService: Logging -->
     <string name="payload_log_format">%1$s --> %2$s</string>
+
+    <!-- SupportActivity: GUI -->
+    <string name="support_send">SEND</string>
+    <string name="support_thanks">Thank you!</string>
+    <string name="support_soon">We will contact you soon.</string>
+
 </resources>
